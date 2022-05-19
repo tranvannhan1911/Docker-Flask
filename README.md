@@ -46,7 +46,7 @@
             return render_template('index.html', title='Docker Python', name='James')
         
         if __name__ == "__main__":
-            **app.run(host="0.0.0.0")**
+            app.run(host="0.0.0.0")
         ```
         
 2. Khác
@@ -105,8 +105,8 @@
                 ports:
                   - "5000:5555"
                 restart: unless-stopped
-                **environment:
-                  PORT: 5555**
+                environment:
+                  PORT: 5555
             ```
             
         - Build lại image
@@ -134,11 +134,11 @@
             services:
               app:
                 image: learning-docker/docker-flask
-                **ports:
-                  - "${PUBLIC_PORT}:${PORT}"**
+                ports:
+                  - "${PUBLIC_PORT}:${PORT}"
                 restart: unless-stopped
-                **environment:
-                  PORT: ${PORT}**
+                environment:
+                  PORT: ${PORT}
             ```
             
     4. remove image
